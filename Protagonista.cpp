@@ -98,5 +98,6 @@ void Protagonista::update()
     {
         _spriteprotagonista.setScale(1,1);
     }
+    /////pruebaparagithub
 }
 
