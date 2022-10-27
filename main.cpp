@@ -8,7 +8,7 @@ int main()
 
     Juego x;
 
-    std::cout << "hola!";
+    std::cout << "hola mundo!";
 
     return 0;
 }
