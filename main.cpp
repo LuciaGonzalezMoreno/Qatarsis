@@ -8,18 +8,8 @@ int main()
 
     Juego x;
 
-<<<<<<< HEAD
     std::cout << "hola mundo!";
-=======
-<<<<<<< Updated upstream
-    std::cout << "hola!";
->>>>>>> branchdepruebalucia
-
-=======
-    std::cout << "hola mundo!";
-    std::cout << "que onda?"
-    std::cout << "que onda?"
-    std::cout << "que onda?"
->>>>>>> Stashed changes
+    std::cout << "que onda?";
+   dfsfsdfsdfsdfsdf
     return 0;
 }
