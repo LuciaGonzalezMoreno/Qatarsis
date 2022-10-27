@@ -9,6 +9,7 @@
 #include "Objeto.h"
 #include "Figurita.h"
 #include "Repetida.h"
+#include"Avatar.h"
 #include <SFML/Graphics.hpp>
 #include  <iostream>
 
@@ -16,17 +17,19 @@ using namespace std;
 
 class Gameplay : public sf::Drawable
 {
- private:
+private:
 
     sf::Sprite _spritefondo;
     sf::Texture _texturafondo;
+    sf::Sprite _spriteRio;
+    sf::Texture _texturaRio;
 
     Mapa _mapa;
     Protagonista _pipo;
     Personajes _personajessecundarios[7];
-///    Panedecontrol _paneldecontrol;
-Panellateral _panellateral; /// Panel lateral deberia estar en
-/// Ranking _rankingactual;
+
+    ///    Panedecontrol _paneldecontrol;
+    Panellateral _panellateral; /// Panel lateral deberia estar en Ranking _rankingactual;
 
     Objeto _pelota;
     Objeto _camiseta;
@@ -34,7 +37,13 @@ Panellateral _panellateral; /// Panel lateral deberia estar en
     Figurita _figuritas[6];
     Repetida _repetidas[3];
 
-    public:
+    Avatar _avatar;
+
+    sf::Clock _reloj1;
+    sf::Time _tiempo1;
+
+public:
+
     ///CONSTRUCTOR-DESTRUCTOR
     Gameplay();
     virtual ~Gameplay();
@@ -51,9 +60,7 @@ Panellateral _panellateral; /// Panel lateral deberia estar en
     void update();
     sf::FloatRect getBound() const;
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-void checkearcolisiones();
-void limitesdelmapa();
+    void checkearcolisiones();
+    void limitesdelmapa();
 };
-
-
 #endif // GAMEPLAY_H

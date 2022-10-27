@@ -2,7 +2,7 @@
 
 Protagonista::Protagonista()
 {
-    _texturaprotagonista.loadFromFile("chabonsito.png");
+    _texturaprotagonista.loadFromFile("Pipo.png");
     _spriteprotagonista.setTexture(_texturaprotagonista);
     _velocidad= {0,0};
     _spriteprotagonista.setPosition(12+_spriteprotagonista.getGlobalBounds().width/2,15+_spriteprotagonista.getGlobalBounds().height/2);
@@ -98,6 +98,6 @@ void Protagonista::update()
     {
         _spriteprotagonista.setScale(1,1);
     }
-    /////pruebaparagithub
+    // Hola
 }
 

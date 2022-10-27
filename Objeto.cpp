@@ -2,7 +2,7 @@
 
 Objeto::Objeto()
 {
-    //ctor
+
 }
 
 void Objeto::solucionado()

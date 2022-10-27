@@ -2,9 +2,12 @@
 
 Mapa::Mapa()
 {
-    _texturacalles.loadFromFile("callesubicar.png");
+    _texturacalles.loadFromFile("Calles.png");
     _spritecalles.setTexture(_texturacalles);
-    _spritecalles.setPosition(12,15);
+    _spritecalles.setPosition(15,15);
+
+    texturayposicioncuadras();
+    texturayposicioncasas();
 }
 
 Mapa::~Mapa()

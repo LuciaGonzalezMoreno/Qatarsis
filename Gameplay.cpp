@@ -4,15 +4,20 @@ using namespace sf;
 
 Gameplay::Gameplay()
 {
-    _texturafondo.loadFromFile("texturafondo.png");
+    _texturafondo.loadFromFile("Pasto.png");
     _spritefondo.setTexture(_texturafondo);
 
-    _mapa.texturayposicioncuadras();
-    _mapa.texturayposicioncasas();
+    _texturaRio.loadFromFile("Rio.png");
+    _spriteRio.setTexture(_texturaRio);
+    _spriteRio.setPosition(0,370);
+
     inicializarfiguritas();
+
 /// inicializarobjetos()'
 /// inicializar
     repartirobjetos();
+
+    _tiempo1 = _reloj1.restart();
 }
 
 Gameplay::~Gameplay()
@@ -143,9 +148,11 @@ void Gameplay::update()
 void Gameplay::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     target.draw(_spritefondo, states);
-    target.draw(_panellateral, states);
     target.draw(_mapa,states);
+    target.draw(_spriteRio, states);
+    target.draw(_panellateral, states);
     target.draw(_pipo,states);
+    target.draw(_avatar, states);
 }
 
 sf::FloatRect  Gameplay::getBound() const

@@ -21,7 +21,7 @@ void Juego::inicializavariables()
 
 void Juego::inicializarventana()
 {
-    _window = new sf::RenderWindow(sf::VideoMode(800, 600), "Qatarsis!");
+    _window = new sf::RenderWindow(sf::VideoMode(900, 600), "Qatarsis!");
     _window->setFramerateLimit(60);
 }
 
@@ -52,7 +52,6 @@ void Juego::update()
     if (_menu.gameplayactivo()==true)
     {
         _gameplay.update();
-        _menu.update();
     }
 }
 
