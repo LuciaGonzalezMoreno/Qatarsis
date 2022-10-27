@@ -99,15 +99,15 @@ void Gameplay::intercambios()
 void Gameplay::checkearcolisiones()
 {
     limitesdelmapa();
-    if (_pipo.getBound().intersects(_mapa._cuadras[0].getBound()))
+    for(int x=0; x<14; x++)
     {
+        if (_pipo.getBound().intersects(_mapa._cuadras[x].getBound()))
         _pipo.setposicion(_pipo.getposicionanterior());
     }
 }
 
 void Gameplay::limitesdelmapa()
 {
-
 /// LIMITE IZQUIERDO
     if(_pipo.getxorigen()-_pipo.getancho()/2<12)
     {
@@ -153,6 +153,7 @@ void Gameplay::draw(sf::RenderTarget& target, sf::RenderStates states) const
     target.draw(_panellateral, states);
     target.draw(_pipo,states);
     target.draw(_avatar, states);
+
 }
 
 sf::FloatRect  Gameplay::getBound() const

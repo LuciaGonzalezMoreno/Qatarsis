@@ -19,6 +19,7 @@ public:
     void cargartexturaensprite(std::string nombredelarchivo);
     void setposicionsprite(float x, float y);
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+    sf::Sprite getSprite() const;
 };
 
 #endif // CUADRAS_H

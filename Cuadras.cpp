@@ -26,3 +26,8 @@ void Cuadras::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     target.draw(_spritecuadras, states);
 }
+
+sf::Sprite  Cuadras::getSprite() const
+{
+    return _spritecuadras;
+}

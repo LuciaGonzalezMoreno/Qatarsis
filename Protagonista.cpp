@@ -5,8 +5,8 @@ Protagonista::Protagonista()
     _texturaprotagonista.loadFromFile("Pipo.png");
     _spriteprotagonista.setTexture(_texturaprotagonista);
     _velocidad= {0,0};
-    _spriteprotagonista.setPosition(12+_spriteprotagonista.getGlobalBounds().width/2,15+_spriteprotagonista.getGlobalBounds().height/2);
     _spriteprotagonista.setOrigin(_spriteprotagonista.getGlobalBounds().width/2,_spriteprotagonista.getGlobalBounds().height/2);
+    _spriteprotagonista.setPosition(12+_spriteprotagonista.getGlobalBounds().width/2,12+_spriteprotagonista.getGlobalBounds().height/2);
 }
 
 void Protagonista::pegarfigurita(Figurita *figurita[], int codigo)
@@ -98,6 +98,5 @@ void Protagonista::update()
     {
         _spriteprotagonista.setScale(1,1);
     }
-    // Hola
 }
 
