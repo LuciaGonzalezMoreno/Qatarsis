@@ -16,13 +16,14 @@ public:
     Casas _casas[10];
     ///SPRITES PUESTOS EN PUBLICO PARA PROBAR ALGO
 
+
     Mapa();
     void texturayposicioncuadras();
     void texturayposicioncasas();
 
-
     sf::FloatRect getBound() const;
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+    sf:: Sprite getspriteCalles();
     virtual ~Mapa();
 
 };

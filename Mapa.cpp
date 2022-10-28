@@ -10,6 +10,11 @@ Mapa::Mapa()
     texturayposicioncasas();
 }
 
+sf:: Sprite Mapa::getspriteCalles()
+{
+    return _spritecalles;
+}
+
 Mapa::~Mapa()
 {
     //dtor
@@ -21,7 +26,8 @@ void Mapa::texturayposicioncuadras()
     {
         _cuadras[x].cargartexturaensprite("SpriteManzana" + std::to_string(x+1) + ".png");
     }
-    float _distMapa = 10;;
+
+    float _distMapa = 10;
     float _distCalle= 35;
 
     _cuadras[0].setposicionsprite(_distMapa + _distCalle , _distMapa + _distCalle);
@@ -42,8 +48,11 @@ void Mapa::texturayposicioncuadras()
 
 void Mapa::texturayposicioncasas()
 {
-    _casas[0].cargartexturaensprite("casakiosco0.png");
-    _casas[0].setposicionsprite(414,150);
+    _casas[0].cargartexturaensprite("Textura_kiosco.png");
+
+    _casas[0].getSprite().setRotation(90);
+    _casas[0].setposicionsprite(_cuadras[6].getxorigen() + _cuadras[6].getBound().width , _cuadras[6].getyorigen() + 10);
+    //_casas[0].setposicionsprite(_casas[0].getxorigen() + (_cuadras[6].getSprite().getGlobalBounds().width - _casas[0].getSprite().getGlobalBounds().width) , _cuadras[6].getyorigen()-10);
 }
 
 sf::FloatRect  Mapa::getBound() const
@@ -59,4 +68,6 @@ void Mapa::draw(sf::RenderTarget& target, sf::RenderStates states) const
     {
         target.draw(_cuadras[x], states);
     }
+
+    target.draw(_casas[0], states);
 }

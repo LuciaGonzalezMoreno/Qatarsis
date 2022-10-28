@@ -20,6 +20,8 @@ public:
     void setposicionsprite(float x, float y);
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     sf::Sprite getSprite() const;
+    float getxorigen();
+    float getyorigen();
 };
 
 #endif // CUADRAS_H

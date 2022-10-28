@@ -31,3 +31,13 @@ sf::Sprite  Cuadras::getSprite() const
 {
     return _spritecuadras;
 }
+
+float Cuadras::getxorigen()
+{
+    return _spritecuadras.getPosition().x;
+}
+
+float Cuadras::getyorigen()
+{
+    return _spritecuadras.getPosition().y;
+}

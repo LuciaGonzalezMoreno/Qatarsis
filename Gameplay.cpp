@@ -9,7 +9,7 @@ Gameplay::Gameplay()
 
     _texturaRio.loadFromFile("Rio.png");
     _spriteRio.setTexture(_texturaRio);
-    _spriteRio.setPosition(0,370);
+    _spriteRio.setPosition(0,380);
 
     inicializarfiguritas();
 
@@ -102,40 +102,33 @@ void Gameplay::checkearcolisiones()
     for(int x=0; x<14; x++)
     {
         if (_pipo.getBound().intersects(_mapa._cuadras[x].getBound()))
-        _pipo.setposicion(_pipo.getposicionanterior());
+            _pipo.setposicion(_pipo.getposicionanterior());
     }
 }
 
 void Gameplay::limitesdelmapa()
 {
-/// LIMITE IZQUIERDO
-    if(_pipo.getxorigen()-_pipo.getancho()/2<12)
+    if(_pipo.getxorigen()-_pipo.getancho()/2<10)
     {
-
         _pipo.setposicion(_pipo.getposicionanterior());
     }
 
-///LIMITE DERECHO
-
-    if(_pipo.getxorigen()+_pipo.getancho()/2>495)
+    ///LIMITE DERECHO
+    if(_pipo.getxorigen()+_pipo.getancho()/2>_mapa.getspriteCalles().getGlobalBounds().width + 10)
     {
         _pipo.setposicion(_pipo.getposicionanterior());
     }
 
     /// LIMITESUPERIOR
-    if(_pipo.getyorigen()-_pipo.getalto()/2<15)
+    if(_pipo.getyorigen()-_pipo.getalto()/2<10)
     {
         _pipo.setposicion(_pipo.getposicionanterior());
+    }
 
-
-        ///LIMITE INFERIOR
-
-        if(_pipo.getyorigen()+_pipo.getalto()/2>452)
-        {
-
-            _pipo.setposicion(_pipo.getposicionanterior());
-        }
-
+    ///LIMITE INFERIOR
+    if(_pipo.getyorigen()+_pipo.getalto()/2>_mapa.getspriteCalles().getGlobalBounds().height + 10)
+    {
+        _pipo.setposicion(_pipo.getposicionanterior());
     }
 }
 

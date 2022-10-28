@@ -24,6 +24,16 @@ void Casas::draw(sf::RenderTarget& target, sf::RenderStates states) const
     target.draw(_spritecasas, states);
 }
 
+float Casas::getxorigen()
+{
+    return _spritecasas.getPosition().x;
+}
+
+float Casas::getyorigen()
+{
+    return _spritecasas.getPosition().y;
+}
+
 Casas::Casas()
 {
     //ctor

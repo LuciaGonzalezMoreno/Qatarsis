@@ -5,7 +5,6 @@
 using namespace std;
 
 class Casas : public sf::Drawable
-
 {
         private:
         sf::Sprite _spritecasas;
@@ -20,6 +19,8 @@ Casas();
         void draw(sf::RenderTarget& target, sf::RenderStates states) const;
         sf::Sprite getSprite() { return _spritecasas;}
         sf::Texture getTexture() { return _texturacasas;}
+        float getxorigen();
+        float getyorigen();
 };
 
 #endif // CASAS_H

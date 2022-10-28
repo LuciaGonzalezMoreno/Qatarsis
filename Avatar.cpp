@@ -12,12 +12,12 @@ Avatar::Avatar()
     _textoNombre.setFont(_fuente1);
     _textoCronometro.setFont(_fuente1);
 
-        // NO IMPRIME
+
     _textoNombre.setString(_nombreJugador);
     _textoNombre.setOrigin(0 , _textoNombre.getGlobalBounds().height);
     _textoNombre.setPosition(_spriteAvatar.getPosition().x + 5.f , _spriteAvatar.getPosition().y + 5.f);
 
-        // NO IMPRIME
+
    _textoCronometro.setString("18:00");
    _textoCronometro.setOrigin(0 , _textoCronometro.getGlobalBounds().height);
    _textoCronometro.setPosition(_spriteAvatar.getPosition().x , _spriteAvatar.getPosition().y);
@@ -25,7 +25,7 @@ Avatar::Avatar()
 
 void Avatar::update()
 {
-    //_textoCronometro.setString(_tiempo2));
+    //_textoCronometro.setString(_tiempo2.));
 }
 
 void Avatar::draw(sf::RenderTarget& target, sf::RenderStates states) const
