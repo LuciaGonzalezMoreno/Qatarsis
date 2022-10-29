@@ -5,7 +5,7 @@ Objeto::Objeto()
     //ctor
 }
 
-void Objeto::solucionado()
+void Objeto::solucionar()
 {
     _solucionado=true;
 }

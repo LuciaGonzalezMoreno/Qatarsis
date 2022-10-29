@@ -2,14 +2,13 @@
 #define PERSONAJES_H
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "Colisionable.h"
 #include "Figurita.h"
 #include "Objeto.h"
 #include "Repetida.h"
 
-class Personajes : public Objeto, public sf::Drawable, public Colisionable
-{
 
+class Personajes : public Objeto, public sf::Drawable
+{
 
 /// Funciones que personaje principal no deberia heredar
 ///void setParlamentos ();
@@ -19,34 +18,33 @@ private:
 
     sf::Sprite _spritepersonajes;
     sf::Texture _texturapersonajes;
-    Objeto *_pelota;
-    Objeto *_camiseta;
-    Objeto *_autografo;
+    Objeto *_objetos[3];
     Figurita *_figuritas[6];
     Repetida *_repetidas[3];
 
 public:
 
+    Objeto *getpunteroobjetos(int codigodeobjeto);
+    Figurita *getpunterofiguritas(int codigofiguritas);
+    Repetida *getpunterorepetidas(int codigorepetidas);
 
     void inicializarpunteros();
 
     Personajes();
     void update();
-    sf::FloatRect getBound() const;
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     virtual ~Personajes();
-    void solucionarpelota();
 
-    void addFigurita(Figurita *figurita,int codigo);
-    void addRepetida(Repetida *repetida,int codigo);
-
-    ///FUNCIONESQUECOMPARTENCONPROTAGONISTA
-    void addpelota(Objeto *pelota);
-    void addcamiseta(Objeto *camiseta);
-    void addautografo(Objeto *autografo);
-    void darpelota(Objeto *pelota, Personajes *personaje);
-    void darcamiseta(Objeto *camiseta, Personajes *personaje);
-    void darautografo(Objeto *autografo, Personajes *personaje);
+    void solucionarobjeto(int codigo);
+    void addFigurita(Figurita *Vector,int codigojugador);
+    void addRepetida(Repetida *Vector,int codigojugador);
+    void addobjeto(Objeto *Vector, int codigoobjeto);
+    void darobjeto(Personajes *personaje, int codigoobjeto);
+    void darfigurita(int codigodejugador, Personajes *Vectorpersonajes, int codigodepersonaje);
+    void darfigurita(int codigodejugador, Personajes *pipo);
+    int getpelota();
+    int getcamiseta();
+    int getautografo();
 
 };
 

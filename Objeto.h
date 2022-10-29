@@ -16,7 +16,7 @@ class Objeto
     public:
 
         bool getestado(){return _solucionado;}
-        void solucionado();
+        void solucionar();
         Objeto();
         void setsprite(std::string nombredearchivo);
         virtual ~Objeto();

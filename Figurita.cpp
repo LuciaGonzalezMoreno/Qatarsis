@@ -5,7 +5,7 @@ Figurita::Figurita()
 
 }
 
-void Figurita::Pegada()
+void Figurita::Pegar()
 {
     pegada=true;
 }
@@ -13,6 +13,11 @@ void Figurita::Pegada()
 void Figurita::setcodigodefigurita(int codigo)
 {
     _codigodefigurita=codigo;
+}
+
+bool Figurita::getestado(){
+
+return pegada;
 }
 
 void Figurita::setsprite(std::string nombredearchivo)

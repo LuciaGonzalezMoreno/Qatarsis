@@ -6,8 +6,6 @@ class Panellateral : public sf::Drawable
 {
     private:
 
-    sf::Sprite _spritepanellateral;
-    sf::Texture _texturapanellateral;
 
     public:
     Panellateral();

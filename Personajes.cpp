@@ -7,9 +7,7 @@ Personajes::Personajes()
 
 void Personajes::inicializarpunteros()
 {
-    _pelota=nullptr;
-    _camiseta=nullptr;
-    _autografo=nullptr;
+
 
     for (int i=0; i<6; i++)
     {
@@ -17,6 +15,7 @@ void Personajes::inicializarpunteros()
     }
     for (int i=0; i<3; i++)
     {
+        _objetos[i]=nullptr;
         _repetidas[i]=nullptr;
     }
 }
@@ -26,68 +25,86 @@ void Personajes::update()
 
 }
 
-sf::FloatRect Personajes::getBound() const {}
+
 void Personajes::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 
 }
 
-void Personajes::addpelota(Objeto *pelota)
+void Personajes::addobjeto(Objeto *Vector, int codigo)
 {
-    _pelota=pelota;
+   _objetos[codigo]=Vector;
 }
 
-void Personajes::addcamiseta(Objeto *camiseta)
-{
-    _camiseta=camiseta;
-}
+    Objeto *Personajes::getpunteroobjetos(int codigodeobjeto){
 
-void Personajes::addautografo(Objeto *autografo)
-{
-    _autografo=autografo;
-}
+    return _objetos[codigodeobjeto];
 
-void Personajes::darpelota(Objeto *pelota, Personajes *personaje)
-{
-    _pelota=nullptr;
-    personaje->addpelota(pelota);
-}
-
-void Personajes::darcamiseta(Objeto *camiseta, Personajes *personaje)
-{
-    _camiseta=nullptr;
-
-    personaje->addcamiseta(camiseta);
-}
-void Personajes::darautografo(Objeto *autografo, Personajes *personaje)
-{
-    _autografo=nullptr;
-
-    personaje->addautografo(autografo);
-}
-
-void Personajes::addFigurita(Figurita *figurita,int codigo)
-{
-    *_figuritas[codigo]=figurita[codigo];
-}
-
-void Personajes::addRepetida(Repetida *repetida,int codigo)
-{
-    * _repetidas[codigo]=repetida[codigo];
-}
-
-void Personajes::solucionarpelota()
-{
-    if(_pelota==nullptr)
-    {
-        std::cout << "Este personaje no tiene la pelota" << std::endl;
     }
+
+    Figurita *Personajes::getpunterofiguritas(int codigofiguritas){
+
+    return _figuritas[codigofiguritas];
+    }
+    Repetida *Personajes::getpunterorepetidas(int codigorepetidas){
+
+    return _repetidas[codigorepetidas];
+    }
+
+
+void Personajes::darobjeto(Personajes *personaje, int codigoobjeto)
+{
+    if (_objetos[codigoobjeto]==nullptr){std::cout << "El personaje no tiene el objeto" << std::endl;}
+    Objeto *punteroauxiliar=_objetos[codigoobjeto];
+    personaje->addobjeto(punteroauxiliar,codigoobjeto);
+   _objetos[codigoobjeto]=nullptr;
+}
+
+
+void Personajes::addFigurita(Figurita *figurita,int jugador){
+
+_figuritas[jugador]=figurita;
+
+}
+
+
+void Personajes::darfigurita(int codigodejugador, Personajes Vectorpersonajes[], int codigodepersonaje){
+
+if(_figuritas[codigodejugador]==nullptr){std::cout << "El personaje no tiene esa figurita" << std::endl;}
+else{
+Figurita *punteroauxiliar=_figuritas[codigodejugador];
+Vectorpersonajes[codigodepersonaje].addFigurita(punteroauxiliar,codigodejugador);
+_figuritas[codigodejugador]=nullptr;
+}
+}
+
+void Personajes::darfigurita(int codigodejugador, Personajes *pipo){
+
+if(_figuritas[codigodejugador]==nullptr){std::cout << "El personaje no tiene esa figurita" << std::endl;}
+else{
+
+Figurita *punteroauxiliar=_figuritas[codigodejugador];
+pipo->addFigurita(punteroauxiliar,codigodejugador);
+
+_figuritas[codigodejugador]=nullptr;
+}
+
+}
+
+
+void Personajes::solucionarobjeto(int codigo)
+{
+    if(_objetos[codigo]==nullptr){ std::cout << "Este personaje no tiene la pelota" << std::endl;}
     else
     {
-        _pelota->solucionado();
+        _objetos[codigo]->solucionar();
     }
 }
 
+
+    int getpelota(){  return 0; }
+    int getcamiseta(){return 1;   }
+    int getautografo(){  return 2; }
 Personajes::~Personajes()
 {
     //dtor

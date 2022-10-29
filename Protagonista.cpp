@@ -9,9 +9,16 @@ Protagonista::Protagonista()
     _spriteprotagonista.setOrigin(_spriteprotagonista.getGlobalBounds().width/2,_spriteprotagonista.getGlobalBounds().height/2);
 }
 
-void Protagonista::pegarfigurita(Figurita *figurita[], int codigo)
+void Protagonista::pegarfigurita(Figurita *Vectorfigus, int jugador)
 {
-    figurita[codigo]->Pegada();
+    if(_figuritas[jugador]==nullptr){std::cout << "Pipo no tiene esa figurita" << std::endl;}
+
+    else{
+            Vectorfigus[jugador]->Pegar();
+
+        }
+
+
 }
 
 Protagonista::~Protagonista()

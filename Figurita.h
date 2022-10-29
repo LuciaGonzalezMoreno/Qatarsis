@@ -10,9 +10,11 @@ class Figurita
     sf::Sprite _spritefigurita;
     sf::Texture _texturafigurita;
     int _codigodefigurita;
-    public:
     bool pegada=false;
-    void Pegada();
+    public:
+    bool getestado();
+
+    void Pegar();
      Figurita();
      int getcodigodefigurita();
         void setcodigodefigurita(int codigo);

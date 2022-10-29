@@ -71,6 +71,8 @@
 		<Unit filename="Menu.h" />
 		<Unit filename="Objeto.cpp" />
 		<Unit filename="Objeto.h" />
+		<Unit filename="Paneldecontrol.cpp" />
+		<Unit filename="Paneldecontrol.h" />
 		<Unit filename="Panellateral.cpp" />
 		<Unit filename="Panellateral.h" />
 		<Unit filename="Personajes.cpp" />
