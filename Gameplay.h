@@ -9,7 +9,7 @@
 #include "Objeto.h"
 #include "Figurita.h"
 #include "Repetida.h"
-///#include "Avatar.h"
+#include "Avatar.h"
 #include <SFML/Graphics.hpp>
 #include  <iostream>
 
@@ -28,7 +28,7 @@ private:
     /// Propiedades
 
     Mapa _mapa;
-  //  Avatar _avatar;
+    Avatar _avatar;
     Paneldecontrol _paneldecontrol;
     Personajes _personajes[5];
     Figurita _figuritas[6];

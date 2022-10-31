@@ -162,7 +162,7 @@ void Gameplay::draw(sf::RenderTarget& target, sf::RenderStates states) const{
     target.draw(_spriteRio, states);
     target.draw(_paneldecontrol, states);
     target.draw(_pipo,states);
-///    target.draw(_avatar, states);
+    target.draw(_avatar, states);
     }
 
 sf::FloatRect  Gameplay::getBound() const   {return _spritefondo.getGlobalBounds();}
