@@ -21,6 +21,8 @@ Casas();
         sf::Texture getTexture() { return _texturacasas;}
         float getxorigen();
         float getyorigen();
+        void setSpriteRotation(float op);
+        void setSpriteOrigin(float x , float y);
 };
 
 #endif // CASAS_H
