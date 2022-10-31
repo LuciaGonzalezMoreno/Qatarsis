@@ -63,8 +63,6 @@
 		<Unit filename="Cuadras.h" />
 		<Unit filename="Figurita.cpp" />
 		<Unit filename="Figurita.h" />
-		<Unit filename="Figuritas.cpp" />
-		<Unit filename="Figuritas.h" />
 		<Unit filename="Gameplay.cpp" />
 		<Unit filename="Gameplay.h" />
 		<Unit filename="Juego.cpp" />
@@ -77,11 +75,7 @@
 		<Unit filename="Objeto.h" />
 		<Unit filename="Paneldecontrol.cpp" />
 		<Unit filename="Paneldecontrol.h" />
-<<<<<<< Updated upstream
-		<Unit filename="Panellateral.cpp" />
 		<Unit filename="Panellateral.h" />
-=======
->>>>>>> Stashed changes
 		<Unit filename="Personajes.cpp" />
 		<Unit filename="Personajes.h" />
 		<Unit filename="Protagonista.cpp" />
