@@ -2,11 +2,29 @@
 
 Protagonista::Protagonista()
 {
-    _texturaprotagonista.loadFromFile("Pipo.png");
+    _texturaprotagonista.loadFromFile("TexturaPipo.png"); //cambiar textura
     _spriteprotagonista.setTexture(_texturaprotagonista);
+
+    _divSpriteProta.x = 2; //cant de sprites en x
+    _divSpriteProta.y = 1; //cant de sprites en y
+
+    _frameSize = sf::Vector2f(_spriteprotagonista.getTexture()->getSize().x / _divSpriteProta.x , _spriteprotagonista.getTexture()->getSize().y / _divSpriteProta.y);
+
+    //_setFrame(_spriteprotagonista, {0,0});
+   int _dimX = _spriteprotagonista.getTexture()->getSize().x / 2;
+    int _dimY =_spriteprotagonista.getTexture()->getSize().y;
+    _spriteprotagonista.setTextureRect({0,0 , _dimX , _dimY});
+
     _velocidad= {0,0};
+
     _spriteprotagonista.setOrigin(_spriteprotagonista.getGlobalBounds().width/2,_spriteprotagonista.getGlobalBounds().height/2);
     _spriteprotagonista.setPosition(12+_spriteprotagonista.getGlobalBounds().width/2,12+_spriteprotagonista.getGlobalBounds().height/2);
+}
+
+void Protagonista::_setFrame(sf::Sprite _spriteprotagonista, sf::Vector2i numero_frame)
+{
+    sf::IntRect posicion(numero_frame.x * _frameSize.x , numero_frame.y * _frameSize.y , _frameSize.x , _frameSize.y);
+    _spriteprotagonista.setTextureRect({numero_frame.x * (int)_frameSize.x , numero_frame.y * (int)_frameSize.y , (int)_frameSize.x , (int)_frameSize.y});
 }
 
 void Protagonista::pegarfigurita(Figurita *figurita[], int codigo)
@@ -99,4 +117,6 @@ void Protagonista::update()
         _spriteprotagonista.setScale(1,1);
     }
 }
+
+
 

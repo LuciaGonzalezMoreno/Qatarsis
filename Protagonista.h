@@ -7,10 +7,7 @@
 
 class Protagonista : public Personajes
 {
-
-
     private:
-
     Objeto *_Pelota=nullptr;
     Objeto *_Camiseta=nullptr;
     Objeto *_Autografo=nullptr;
@@ -20,6 +17,8 @@ class Protagonista : public Personajes
     sf:: Vector2f _posicionanterior;
     sf::Sprite _spriteprotagonista;
     sf::Texture _texturaprotagonista;
+    sf:: Vector2i _divSpriteProta;
+    sf:: Vector2f _frameSize;
 
            public:
        Protagonista();
@@ -36,6 +35,7 @@ class Protagonista : public Personajes
           sf:: Vector2f getposicionanterior();
       void setposicion(sf::Vector2f nuevaposicion);
       sf::Sprite getSprite() {return _spriteprotagonista;}
+      void _setFrame(sf::Sprite, sf::Vector2i numero_frame);
 
 };
 
