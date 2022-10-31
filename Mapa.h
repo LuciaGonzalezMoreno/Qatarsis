@@ -6,6 +6,7 @@
 #include "Casas.h"
 
 class Mapa  : public sf::Drawable, public Colisionable
+
 {
 private:
     sf::Sprite _spritecalles;

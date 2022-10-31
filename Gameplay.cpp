@@ -158,7 +158,7 @@ void Gameplay::update(){
 void Gameplay::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 
     target.draw(_spritefondo, states);
-        target.draw(_mapa,states);
+    target.draw(_mapa,states);
     target.draw(_spriteRio, states);
     target.draw(_paneldecontrol, states);
     target.draw(_pipo,states);

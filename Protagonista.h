@@ -18,7 +18,7 @@ class Protagonista : public Personajes{
     sf::Texture _texturaprotagonista;
 
         public:
-Protagonista();
+    Protagonista();
         void addFigurita(Figurita &figuritajugador);
 
        void update();
