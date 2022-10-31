@@ -13,7 +13,7 @@ private:
 
 public:
     Cuadras _cuadras[14];
-    Casas _casas[10];
+    Casas _casas[21];
     ///SPRITES PUESTOS EN PUBLICO PARA PROBAR ALGO
 
 

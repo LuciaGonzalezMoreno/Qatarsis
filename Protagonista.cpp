@@ -9,18 +9,16 @@ Protagonista::Protagonista()
     _spriteprotagonista.setPosition(12+_spriteprotagonista.getGlobalBounds().width/2,12+_spriteprotagonista.getGlobalBounds().height/2);
 }
 
-void Protagonista::pegarfigurita(Figurita *figurita[], int codigo)
-{
-    figurita[codigo]->Pegada();
+
+void Protagonista::addFigurita(Figurita &figuritajugador){
+
+_figuritas[figuritajugador.getcodigodefigurita()]=true;
+figuritajugador.Pegar();
+
 }
 
-Protagonista::~Protagonista()
-{
-    //dtor
-}
 
-float Protagonista::getxorigen()
-{
+float Protagonista::getxorigen(){
     return _spriteprotagonista.getPosition().x;
 }
 
@@ -64,8 +62,10 @@ void Protagonista::draw(sf::RenderTarget& target, sf::RenderStates states) const
     target.draw(_spriteprotagonista, states);
 }
 
+
 void Protagonista::update()
 {
+///    Objetosactivos();
     _velocidad= {0,0};
 
     setposicionanterior(_spriteprotagonista.getPosition());
@@ -100,3 +100,4 @@ void Protagonista::update()
     }
 }
 
+Protagonista::~Protagonista() {}
