@@ -4,14 +4,7 @@ Figurita::Figurita(){}
 
 /// Funciones
 
-<<<<<<< Updated upstream
-void Figurita::Pegar()
-{
-    pegada=true;
-}
-=======
 void Figurita::Pegar(){pegada=true;}
->>>>>>> Stashed changes
 
 bool Figurita::getestado(){return pegada;}
 
@@ -21,22 +14,13 @@ int Figurita::getcodigodefigurita()     {return _codigodefigurita;}
 
 /// Sprites y draw
 
-<<<<<<< Updated upstream
-bool Figurita::getestado(){
-
-return pegada;
-}
-
-void Figurita::setsprite(std::string nombredearchivo)
-{
-=======
 void Figurita::setsprite(std::string nombredearchivo){
->>>>>>> Stashed changes
+
     _texturafigurita.loadFromFile(nombredearchivo);
     _spritefigurita.setTexture(_texturafigurita);
 }
 
-sf::Sprite Figurita::getSprite()    {return _spritefigurita;    }
+sf::Sprite Figurita::getSprite()    {return _spritefigurita;   }
 
 sf::FloatRect Figurita::getBound() const    {return _spritefigurita.getGlobalBounds();  }
 

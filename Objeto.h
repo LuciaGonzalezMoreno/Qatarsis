@@ -18,18 +18,7 @@ class Objeto : public sf::Drawable
     int _codigodeobjeto;
 
     public:
-<<<<<<< Updated upstream
 
-        bool getestado(){return _solucionado;}
-        void solucionar();
-        Objeto();
-        void setsprite(std::string nombredearchivo);
-        virtual ~Objeto();
-
-
-
-
-=======
     Objeto();
 
     //  Funciones
@@ -46,7 +35,7 @@ class Objeto : public sf::Drawable
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
     virtual ~Objeto();
->>>>>>> Stashed changes
+
 };
 
 #endif // OBJETO_H

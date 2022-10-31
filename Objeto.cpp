@@ -1,16 +1,5 @@
 #include "Objeto.h"
 
-<<<<<<< Updated upstream
-Objeto::Objeto()
-{
-    //ctor
-}
-
-void Objeto::solucionar()
-{
-    _solucionado=true;
-}
-=======
 Objeto::Objeto(){}
 
 ///	Funciones
@@ -23,7 +12,6 @@ void Objeto::solucionado()  {_solucionado=true;}
 
 bool Objeto::activar()  {_activo=true;}
 
->>>>>>> Stashed changes
 
 ///	Sprites y draw
 

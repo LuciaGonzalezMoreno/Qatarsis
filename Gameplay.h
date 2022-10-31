@@ -9,7 +9,7 @@
 #include "Objeto.h"
 #include "Figurita.h"
 #include "Repetida.h"
-#include "Avatar.h"
+///#include "Avatar.h"
 #include <SFML/Graphics.hpp>
 #include  <iostream>
 
@@ -24,23 +24,11 @@ private:
     sf::Texture _texturafondo;
     sf::Sprite _spriteRio;
     sf::Texture _texturaRio;
-<<<<<<< Updated upstream
-    Paneldecontrol _paneldecontrol;
-    Mapa _mapa;
-    Protagonista _pipo;
-    Personajes _personajessecundarios[7];
-    ///Panedecontrol _paneldecontrol;
-    ///Panellateral deberia estar en Ranking _rankingactual;
-    Objeto _objetos[3];
-    Figurita _figuritas[6];
-    Repetida _repetidas[3];
-    Avatar _avatar;
-=======
 
     /// Propiedades
 
     Mapa _mapa;
-    Avatar _avatar;
+  //  Avatar _avatar;
     Paneldecontrol _paneldecontrol;
     Personajes _personajes[5];
     Figurita _figuritas[6];
@@ -63,28 +51,17 @@ private:
     Figurita *Figuritalautaro=&_figuritas[5];
 
     ///
->>>>>>> Stashed changes
+
     sf::Clock _reloj1;
     sf::Time _tiempo1;
 
 public:
 
     Gameplay();
-<<<<<<< Updated upstream
-    virtual ~Gameplay();
-    Protagonista *getpipo(); /// Devuelve direccion de memoria Protagonista
-
-    int getpelota(),getcamiseta(),getautografo();///OBJETOS
-    int getMessi(),getDibu(),getDepaul(),getDimaria(),getAlvarez(),getJugador6(); /// SELECCION
-    int getsuarez(), getcristiano(), getneymar(); /// REPETIDAS
-    int getbicicletero(),getkiosquera(), getpersonaje3();
-    void intercambios();
-=======
 
     /// Funciones
 
     void inicializarobjetos();
->>>>>>> Stashed changes
     void repartirobjetos();
     void inicializarfiguritas();
     void inicializarpersonajes();

@@ -9,20 +9,6 @@ Protagonista::Protagonista()
     _spriteprotagonista.setOrigin(_spriteprotagonista.getGlobalBounds().width/2,_spriteprotagonista.getGlobalBounds().height/2);
 }
 
-<<<<<<< Updated upstream
-void Protagonista::pegarfigurita(Figurita *Vectorfigus, int jugador)
-{
-    if(_figuritas[jugador]==nullptr){std::cout << "Pipo no tiene esa figurita" << std::endl;}
-
-    else{
-            Vectorfigus[jugador]->Pegar();
-
-        }
-
-
-}
-=======
->>>>>>> Stashed changes
 
 void Protagonista::addFigurita(Figurita &figuritajugador){
 

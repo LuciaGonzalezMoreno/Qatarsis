@@ -14,14 +14,8 @@ _window =nullptr;
 /// Gameplay.inicializarrakning(getarchivoranking())
 }
 
-<<<<<<< Updated upstream
-void Juego::inicializarventana()
-{
-    _window = new sf::RenderWindow(sf::VideoMode(800, 600), "Qatarsis!");
-=======
 void Juego::inicializarventana(){
     _window = new sf::RenderWindow(sf::VideoMode(900, 600), "Qatarsis!");
->>>>>>> Stashed changes
     _window->setFramerateLimit(60);
 }
 
