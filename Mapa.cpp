@@ -1,7 +1,6 @@
 #include "Mapa.h"
 
-Mapa::Mapa()
-{
+Mapa::Mapa(){
     _texturacalles.loadFromFile("Calles.png");
     _spritecalles.setTexture(_texturacalles);
     _spritecalles.setPosition(10,10);
@@ -10,18 +9,22 @@ Mapa::Mapa()
     texturayposicioncasas();
 }
 
-sf:: Sprite Mapa::getspriteCalles()
-{
-    return _spritecalles;
+
+Cuadras *Mapa::getcuadras(int numerodecuadra){
+
+return &_cuadras[numerodecuadra];
+
 }
 
-Mapa::~Mapa()
-{
-    //dtor
+Casas *Mapa::getcasa(int numerodecasa){
+
+return &_casas[numerodecasa];
+
 }
 
-void Mapa::texturayposicioncuadras()
-{
+
+
+void Mapa::texturayposicioncuadras(){
     for(int x=0; x<14; x++)
     {
         _cuadras[x].cargartexturaensprite("SpriteManzana" + std::to_string(x+1) + ".png");
@@ -46,8 +49,7 @@ void Mapa::texturayposicioncuadras()
     _cuadras[13].setposicionsprite(_distMapa + (5.f * _distCalle) +  _cuadras[9].getSprite().getGlobalBounds().width  +  _cuadras[10].getSprite().getGlobalBounds().width +  _cuadras[11].getSprite().getGlobalBounds().width +  _cuadras[12].getSprite().getGlobalBounds().width,  _distMapa + (4.f * _distCalle) + _cuadras[1].getSprite().getGlobalBounds().height + _cuadras[4].getSprite().getGlobalBounds().height + _cuadras[7].getSprite().getGlobalBounds().height);
 }
 
-void Mapa::texturayposicioncasas()
-{
+void Mapa::texturayposicioncasas() {
     _casas[0].cargartexturaensprite("0_Textura_hospital.png");
     _casas[0].setSpriteOrigin(0, _casas[0].getBound().height);
     _casas[0].setposicionsprite(_cuadras[0].getxorigen() + 10, _cuadras[0].getyorigen() + _cuadras[0].getBound().height);
@@ -144,22 +146,22 @@ void Mapa::texturayposicioncasas()
 
 }
 
-sf::FloatRect  Mapa::getBound() const
-{
-    return _spritecalles.getGlobalBounds();
-}
+sf:: Sprite Mapa::getspriteCalles(){ return _spritecalles; }
 
-void Mapa::draw(sf::RenderTarget& target, sf::RenderStates states) const
-{
+sf::FloatRect  Mapa::getBound() const{ return _spritecalles.getGlobalBounds();}
+
+void Mapa::draw(sf::RenderTarget& target, sf::RenderStates states) const{
     target.draw(_spritecalles, states);
 
-    for(int x=0; x<14; x++)
-    {
+    for(int x=0; x<14; x++){
+
         target.draw(_cuadras[x], states);
     }
+for(int x=0; x<21; x++){
 
-    for(int x=0; x<21; x++)
-    {
         target.draw(_casas[x], states);
     }
+
 }
+
+Mapa::~Mapa(){}

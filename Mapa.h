@@ -11,13 +11,13 @@ class Mapa  : public sf::Drawable, public Colisionable
 private:
     sf::Sprite _spritecalles;
     sf::Texture _texturacalles;
-
-public:
     Cuadras _cuadras[14];
     Casas _casas[21];
+public:
+
     ///SPRITES PUESTOS EN PUBLICO PARA PROBAR ALGO
-
-
+    Cuadras *getcuadras(int numerodecuadra);
+    Casas *getcasa(int numerodecasa);
     Mapa();
     void texturayposicioncuadras();
     void texturayposicioncasas();

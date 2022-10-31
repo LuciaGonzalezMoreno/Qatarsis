@@ -1,7 +1,5 @@
 #include "Gameplay.h"
 
-using namespace sf;
-
 Gameplay::Gameplay()
 {
     //Cargando sprites
@@ -10,11 +8,11 @@ Gameplay::Gameplay()
     _texturaRio.loadFromFile("Rio.png");
     _spriteRio.setTexture(_texturaRio);
     _spriteRio.setPosition(0,380);
-    _paneldecontrol.cargarobjetos(_figuritas,6,_objetos,3,_repetidas,3);
 
-    //inicializandogameplay
+    /// Inicializaciones
+    _paneldecontrol.cargarobjetos(_figuritas,6,_objetos,3,_repetidas,3);
     inicializarfiguritas();
-/// inicializarobjetos()
+    ///inicializarobjetos();
     repartirobjetos();
 }
 
@@ -27,29 +25,15 @@ void Gameplay::inicializarobjetos(){
 }
 void Gameplay::repartirobjetos()
 {
-
 Kioskera->addobjeto(Pelota);
 Kioskera->addFigurita(Figuritaalvarez);
-Kioskera->darobjeto(Pelota,Pipo);
-Pipo->darobjeto(Pelota,Kioskera);
-Kioskera->solucionarobjeto(Pelota);
-Kioskera->darobjeto(Pelota,Pipo);
-Kioskera->darfiguritaapipo(Figuritaalvarez,Pipo);
-Kioskera->darfiguritaapipo(Figuritamessi,Pipo);
-Kioskera->darfiguritaapipo(Figuritadepaul,Pipo);
-Kioskera->darfiguritaapipo(Figuritadimaria,Pipo);
-Kioskera->darfiguritaapipo(Figuritadibu,Pipo);
-Kioskera->darfiguritaapipo(Figuritalautaro,Pipo);
-std:: cout << Figuritamessi->getestado() << std::endl;
-std:: cout << Pelota->getestado()<< std::endl;
-std:: cout << _objetos[0].getestado()<< std::endl;
+
 }
 
 ///SETEANDO SPRITE Y CODIGO DE FIGURITA
 
-
-
 void Gameplay::inicializarfiguritas(){
+
 _figuritas[0].setsprite("figuritamessi.png");
 _figuritas[0].setcodigodefigurita(0);
 _figuritas[0].setposicionsprite(591,36);
@@ -75,7 +59,6 @@ _figuritas[5].setsprite("figuritalautaro.png");
 _figuritas[5].setcodigodefigurita(5);
 _figuritas[5].setposicionsprite(793,133);
 
-
 }
 
 void Gameplay::inicializarpersonajes(){
@@ -95,18 +78,41 @@ _personajes[4].setsprite("personaje5.png");
 }
 
 
-void Gameplay::intercambios()
-{
+void Gameplay::intercambios(){
+
+Kioskera->darobjeto(Pelota,Pipo);
+Pipo->darobjeto(Pelota,Kioskera);
+Kioskera->solucionarobjeto(Pelota);
+Kioskera->darobjeto(Pelota,Pipo);
+Kioskera->darfiguritaapipo(Figuritaalvarez,Pipo);
+Kioskera->darfiguritaapipo(Figuritamessi,Pipo);
+Kioskera->darfiguritaapipo(Figuritadepaul,Pipo);
+Kioskera->darfiguritaapipo(Figuritadimaria,Pipo);
+Kioskera->darfiguritaapipo(Figuritadibu,Pipo);
+Kioskera->darfiguritaapipo(Figuritalautaro,Pipo);
 
 
 }
 
 void Gameplay::checkearcolisiones(){
     limitesdelmapa();
-    if (_pipo.getBound().intersects(_mapa._cuadras[0].getBound()))
-    {
-        _pipo.setposicion(_pipo.getposicionanterior());
+
+
+      if (Pipo->iscolision(*_mapa.getcasa(0))){
+
+        std::cout<< "Llegaste al hospital";
     }
+
+    for(int i=0;i<14;i++){
+
+    if (Pipo->iscolision(*_mapa.getcuadras(i))){
+
+        Pipo->setposicion(Pipo->getposicionanterior());
+    }
+    }
+
+
+
 }
 
 
@@ -151,6 +157,7 @@ void Gameplay::update(){
 
     _pipo.update();
     _paneldecontrol.update();
+    intercambios();
     checkearcolisiones();
 
 }

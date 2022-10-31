@@ -2,9 +2,10 @@
 #define CASAS_H
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Colisionable.h"
 using namespace std;
 
-class Casas : public sf::Drawable
+class Casas : public sf::Drawable , public Colisionable
 {
         private:
         sf::Sprite _spritecasas;
