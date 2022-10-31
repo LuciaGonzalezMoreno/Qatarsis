@@ -14,7 +14,6 @@ private:
 
 public:
     Cuadras();
-
     sf::FloatRect getBound() const;
     void cargartexturaensprite(std::string nombredelarchivo);
     void setposicionsprite(float x, float y);

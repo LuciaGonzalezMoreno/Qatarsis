@@ -1,32 +1,31 @@
 #include "Juego.h"
 
 ///CONSTRUCTOR-DESTRUCTOR
-Juego::Juego()
-{
+Juego::Juego(){
     inicializavariables();
     inicializarventana();
     Gameloop();
 }
 
-Juego::~Juego()
-{
-    delete _window;
-}
 
-void Juego::inicializavariables()
-{
-    _window =nullptr;
+
+void Juego::inicializavariables(){
+_window =nullptr;
 /// Gameplay.inicializarrakning(getarchivoranking())
 }
 
+<<<<<<< Updated upstream
 void Juego::inicializarventana()
 {
     _window = new sf::RenderWindow(sf::VideoMode(800, 600), "Qatarsis!");
+=======
+void Juego::inicializarventana(){
+    _window = new sf::RenderWindow(sf::VideoMode(900, 600), "Qatarsis!");
+>>>>>>> Stashed changes
     _window->setFramerateLimit(60);
 }
 
-void Juego::Gameloop()
-{
+void Juego::Gameloop(){
     while (ventanaabierta())
     {
         update();
@@ -35,15 +34,14 @@ void Juego::Gameloop()
     }
 }
 
-const bool Juego::ventanaabierta()const
-{
+const bool Juego::ventanaabierta()const {
     return this->_window->isOpen();
 }
 
 // UPDATE
-void Juego::update()
-{
-    pollevents();
+void Juego::update(){
+
+     pollevents();
 
     if(_menu.gameplayactivo()==false)
     {
@@ -56,9 +54,17 @@ void Juego::update()
     }
 }
 
+/// FUNCIONES
+void Juego:: pollevents(){
+    while (_window->pollEvent(_event))
+    {
+        if (_event.type == sf::Event::Closed)
+            _window->close();
+    }
+}
+
 //DRAW
-void Juego::draw()
-{
+void Juego::draw(){
     _window->clear(); /// borrar frame anterior
 
     if(_menu.gameplayactivo()==false)
@@ -72,12 +78,4 @@ void Juego::draw()
     _window->display(); /// display el frame
 }
 
-/// FUNCIONES
-void Juego:: pollevents()
-{
-    while (_window->pollEvent(_event))
-    {
-        if (_event.type == sf::Event::Closed)
-            _window->close();
-    }
-}
+Juego::~Juego(){delete _window;}

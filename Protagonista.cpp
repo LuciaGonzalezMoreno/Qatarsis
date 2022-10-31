@@ -9,6 +9,7 @@ Protagonista::Protagonista()
     _spriteprotagonista.setOrigin(_spriteprotagonista.getGlobalBounds().width/2,_spriteprotagonista.getGlobalBounds().height/2);
 }
 
+<<<<<<< Updated upstream
 void Protagonista::pegarfigurita(Figurita *Vectorfigus, int jugador)
 {
     if(_figuritas[jugador]==nullptr){std::cout << "Pipo no tiene esa figurita" << std::endl;}
@@ -20,14 +21,18 @@ void Protagonista::pegarfigurita(Figurita *Vectorfigus, int jugador)
 
 
 }
+=======
+>>>>>>> Stashed changes
 
-Protagonista::~Protagonista()
-{
-    //dtor
+void Protagonista::addFigurita(Figurita &figuritajugador){
+
+_figuritas[figuritajugador.getcodigodefigurita()]=true;
+figuritajugador.Pegar();
+
 }
 
-float Protagonista::getxorigen()
-{
+
+float Protagonista::getxorigen(){
     return _spriteprotagonista.getPosition().x;
 }
 
@@ -71,8 +76,10 @@ void Protagonista::draw(sf::RenderTarget& target, sf::RenderStates states) const
     target.draw(_spriteprotagonista, states);
 }
 
+
 void Protagonista::update()
 {
+///    Objetosactivos();
     _velocidad= {0,0};
 
     setposicionanterior(_spriteprotagonista.getPosition());
@@ -108,3 +115,4 @@ void Protagonista::update()
     /////pruebaparagithub
 }
 
+Protagonista::~Protagonista() {}

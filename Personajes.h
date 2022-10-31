@@ -6,18 +6,26 @@
 #include "Objeto.h"
 #include "Repetida.h"
 
+<<<<<<< Updated upstream
 
 class Personajes : public Objeto, public sf::Drawable
 {
 
+=======
+class Personajes : public sf::Drawable
+{
+
+>>>>>>> Stashed changes
 /// Funciones que personaje principal no deberia heredar
 ///void setParlamentos ();
 ///void Hablar(int codigodeparlamento);
 
-private:
+protected:
 
+    //	Sprites
     sf::Sprite _spritepersonajes;
     sf::Texture _texturapersonajes;
+<<<<<<< Updated upstream
     Objeto *_objetos[3];
     Figurita *_figuritas[6];
     Repetida *_repetidas[3];
@@ -27,11 +35,24 @@ public:
     Objeto *getpunteroobjetos(int codigodeobjeto);
     Figurita *getpunterofiguritas(int codigofiguritas);
     Repetida *getpunterorepetidas(int codigorepetidas);
+=======
 
-    void inicializarpunteros();
+    //	Propiedades
+    int _codigodepersonaje;
+    bool _figuritas[6];
+    bool _repetidas[3];
+    bool _objetos[3];
+
+public:
 
     Personajes();
+>>>>>>> Stashed changes
+
+    //	Funciones
+    void setcodigodepersonaje(int codigo);
+    void inicializarpunteros();
     void update();
+<<<<<<< Updated upstream
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     virtual ~Personajes();
 
@@ -45,7 +66,27 @@ public:
     int getpelota();
     int getcamiseta();
     int getautografo();
+=======
 
+    // Acciones
+
+    void addFigurita(Figurita *jugador);
+    void addRepetida(Repetida *repetida);
+    void addobjeto(Objeto *objeto);
+
+    void darfigurita(Figurita *figurita, Personajes *personaje);
+    void darfiguritaapipo(Figurita *figurita, Personajes *personaje);
+    void darobjeto(Objeto *objeto, Personajes *personaje);
+>>>>>>> Stashed changes
+
+    void solucionarobjeto(Objeto *objeto);
+
+    //	Sprites y draw
+    void setsprite(std::string nombredearchivo);
+    sf::FloatRect getBound() const;
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+    virtual ~Personajes();
 };
 
 #endif // PERSONAJES_H
