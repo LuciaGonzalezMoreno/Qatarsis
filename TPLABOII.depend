@@ -2012,14 +2012,14 @@
 1667183940 source:c:\users\fmmer\desktop\katarsis\qatarsis\cuadras.cpp
 	"Cuadras.h"
 
-1667184192 c:\users\fmmer\desktop\katarsis\qatarsis\cuadras.h
+1667185067 c:\users\fmmer\desktop\katarsis\qatarsis\cuadras.h
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1667184192 source:c:\users\fmmer\desktop\katarsis\qatarsis\figurita.cpp
+1667185067 source:c:\users\fmmer\desktop\katarsis\qatarsis\figurita.cpp
 	"Figurita.h"
 
-1667184192 c:\users\fmmer\desktop\katarsis\qatarsis\figurita.h
+1667185067 c:\users\fmmer\desktop\katarsis\qatarsis\figurita.h
 	<SFML/Graphics.hpp>
 	<iostream>
 
@@ -2029,28 +2029,28 @@
 1666828413 c:\users\fmmer\desktop\katarsis\qatarsis\figuritas.h
 	"Personajes.h"
 
-1667184192 c:\users\fmmer\desktop\katarsis\qatarsis\personajes.h
+1667185067 c:\users\fmmer\desktop\katarsis\qatarsis\personajes.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	"Figurita.h"
 	"Objeto.h"
 	"Repetida.h"
 
-1667184192 c:\users\fmmer\desktop\katarsis\qatarsis\objeto.h
+1667185067 c:\users\fmmer\desktop\katarsis\qatarsis\objeto.h
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1667184192 c:\users\fmmer\desktop\katarsis\qatarsis\repetida.h
+1667185067 c:\users\fmmer\desktop\katarsis\qatarsis\repetida.h
 	"Figurita.h"
 
-1667184192 source:c:\users\fmmer\desktop\katarsis\qatarsis\juego.cpp
+1667185067 source:c:\users\fmmer\desktop\katarsis\qatarsis\juego.cpp
 	"Juego.h"
 
 1666828413 c:\users\fmmer\desktop\katarsis\qatarsis\juego.h
 	"Gameplay.h"
 	"Menu.h"
 
-1667184290 c:\users\fmmer\desktop\katarsis\qatarsis\gameplay.h
+1667185067 c:\users\fmmer\desktop\katarsis\qatarsis\gameplay.h
 	"Paneldecontrol.h"
 	"Protagonista.h"
 	"Mapa.h"
@@ -2067,7 +2067,7 @@
 1667078270 c:\users\fmmer\desktop\katarsis\qatarsis\panellateral.h
 	<SFML/Graphics.hpp>
 
-1667184192 c:\users\fmmer\desktop\katarsis\qatarsis\protagonista.h
+1667185067 c:\users\fmmer\desktop\katarsis\qatarsis\protagonista.h
 	<SFML/Graphics.hpp>
 	"Colisionable.h"
 	"Personajes.h"
@@ -2084,7 +2084,7 @@
 1666828413 c:\users\fmmer\desktop\katarsis\qatarsis\menu.h
 	<SFML/Graphics.hpp>
 
-1667184192 source:c:\users\fmmer\desktop\katarsis\qatarsis\main.cpp
+1667185067 source:c:\users\fmmer\desktop\katarsis\qatarsis\main.cpp
 	<iostream>
 	"Juego.h"
 
@@ -2094,30 +2094,30 @@
 1666828413 source:c:\users\fmmer\desktop\katarsis\qatarsis\menu.cpp
 	"Menu.h"
 
-1667184192 source:c:\users\fmmer\desktop\katarsis\qatarsis\objeto.cpp
+1667185067 source:c:\users\fmmer\desktop\katarsis\qatarsis\objeto.cpp
 	"Objeto.h"
 
 1667078270 source:c:\users\fmmer\desktop\katarsis\qatarsis\panellateral.cpp
 	"Panellateral.h"
 
-1667184192 source:c:\users\fmmer\desktop\katarsis\qatarsis\protagonista.cpp
+1667185067 source:c:\users\fmmer\desktop\katarsis\qatarsis\protagonista.cpp
 	"Protagonista.h"
 
-1667184192 source:c:\users\fmmer\desktop\katarsis\qatarsis\repetida.cpp
+1667185067 source:c:\users\fmmer\desktop\katarsis\qatarsis\repetida.cpp
 	"Repetida.h"
 
-1667184192 source:c:\users\fmmer\desktop\katarsis\qatarsis\gameplay.cpp
+1667185067 source:c:\users\fmmer\desktop\katarsis\qatarsis\gameplay.cpp
 	"Gameplay.h"
 
-1667184192 source:c:\users\fmmer\desktop\katarsis\qatarsis\personajes.cpp
+1667185067 source:c:\users\fmmer\desktop\katarsis\qatarsis\personajes.cpp
 	"Personajes.h"
 
-1667184192 c:\users\fmmer\desktop\katarsis\qatarsis\paneldecontrol.h
+1667185067 c:\users\fmmer\desktop\katarsis\qatarsis\paneldecontrol.h
 	<SFML/Graphics.hpp>
 	"Figurita.h"
 	"Repetida.h"
 	"Objeto.h"
 
-1667184192 source:c:\users\fmmer\desktop\katarsis\qatarsis\paneldecontrol.cpp
+1667185067 source:c:\users\fmmer\desktop\katarsis\qatarsis\paneldecontrol.cpp
 	"Paneldecontrol.h"
 
