@@ -2,12 +2,11 @@
 #define PERSONAJES_H
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "Colisionable.h"
 #include "Figurita.h"
 #include "Objeto.h"
 #include "Repetida.h"
 
-class Personajes : public Objeto, public sf::Drawable, public Colisionable
+class Personajes : public sf::Drawable
 {
 
 
@@ -15,39 +14,46 @@ class Personajes : public Objeto, public sf::Drawable, public Colisionable
 ///void setParlamentos ();
 ///void Hablar(int codigodeparlamento);
 
-private:
+protected:
 
+    //	Sprites
     sf::Sprite _spritepersonajes;
     sf::Texture _texturapersonajes;
-    Objeto *_pelota;
-    Objeto *_camiseta;
-    Objeto *_autografo;
-    Figurita *_figuritas[6];
-    Repetida *_repetidas[3];
+
+    bool _objetos[3];
+    bool _figuritas[6];
+    bool _repetidas[3];
+
+
 
 public:
 
-
-    void inicializarpunteros();
-
     Personajes();
+
+
+    //	Funciones
+    void setcodigodepersonaje(int codigo);
+    void inicializarpunteros();
     void update();
+
+    // Acciones
+
+    void addFigurita(Figurita *jugador);
+    void addRepetida(Repetida *repetida);
+    void addobjeto(Objeto *objeto);
+
+    void darfigurita(Figurita *figurita, Personajes *personaje);
+    void darfiguritaapipo(Figurita *figurita, Personajes *personaje);
+    void darobjeto(Objeto *objeto, Personajes *personaje);
+
+    void solucionarobjeto(Objeto *objeto);
+
+    //	Sprites y draw
+    void setsprite(std::string nombredearchivo);
     sf::FloatRect getBound() const;
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
     virtual ~Personajes();
-    void solucionarpelota();
-
-    void addFigurita(Figurita *figurita,int codigo);
-    void addRepetida(Repetida *repetida,int codigo);
-
-    ///FUNCIONESQUECOMPARTENCONPROTAGONISTA
-    void addpelota(Objeto *pelota);
-    void addcamiseta(Objeto *camiseta);
-    void addautografo(Objeto *autografo);
-    void darpelota(Objeto *pelota, Personajes *personaje);
-    void darcamiseta(Objeto *camiseta, Personajes *personaje);
-    void darautografo(Objeto *autografo, Personajes *personaje);
-
 };
 
 #endif // PERSONAJES_H

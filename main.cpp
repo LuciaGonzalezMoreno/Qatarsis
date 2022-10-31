@@ -8,4 +8,5 @@ int main()
 
     Juego x;
 
+    return 0;
 }

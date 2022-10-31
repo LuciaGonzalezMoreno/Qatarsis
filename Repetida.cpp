@@ -1,11 +1,6 @@
 #include "Repetida.h"
 
-Repetida::Repetida()
-{
-    //ctor
-}
+Repetida::Repetida() {}
 
-Repetida::~Repetida()
-{
-    //dtor
-}
+
+Repetida::~Repetida() {}
