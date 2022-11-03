@@ -34,6 +34,16 @@ float Casas::getyorigen()
     return _spritecasas.getPosition().y;
 }
 
+void Casas::setSpriteRotation(float op)
+{
+    _spritecasas.rotate(op);
+}
+
+void Casas::setSpriteOrigin(float x , float y)
+{
+    _spritecasas.setOrigin(x , y);
+}
+
 Casas::Casas()
 {
     //ctor

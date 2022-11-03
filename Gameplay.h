@@ -1,6 +1,6 @@
 #ifndef GAMEPLAY_H
 #define GAMEPLAY_H
-#include "Panellateral.h"
+#include "Paneldecontrol.h"
 #include "Protagonista.h"
 #include "Mapa.h"
 #include "Personajes.h"
@@ -9,7 +9,6 @@
 #include "Objeto.h"
 #include "Figurita.h"
 #include "Repetida.h"
-#include"Avatar.h"
 #include <SFML/Graphics.hpp>
 #include  <iostream>
 
@@ -19,48 +18,68 @@ class Gameplay : public sf::Drawable
 {
 private:
 
+    /// Sprites
     sf::Sprite _spritefondo;
     sf::Texture _texturafondo;
     sf::Sprite _spriteRio;
     sf::Texture _texturaRio;
 
+    /// Propiedades
+
     Mapa _mapa;
-    Protagonista _pipo;
-    Personajes _personajessecundarios[7];
 
-    ///    Panedecontrol _paneldecontrol;
-    Panellateral _panellateral; /// Panel lateral deberia estar en Ranking _rankingactual;
-
-    Objeto _pelota;
-    Objeto _camiseta;
-    Objeto _autografo;
+    Paneldecontrol _paneldecontrol;
+    Personajes _personajes[5];
     Figurita _figuritas[6];
     Repetida _repetidas[3];
+    Protagonista _pipo;
+    //Ranking
 
-    Avatar _avatar;
+    /// Alias
+
+    Protagonista *Pipo=&_pipo;
+    Objeto _objetos[3];
+    Objeto *Pelota=_objetos;
+    Objeto *Camiseta=&_objetos[1];
+    Personajes *Kioskera=&_personajes[3];
+    Figurita *Figuritamessi=_figuritas;
+    Figurita *Figuritaalvarez=&_figuritas[1];
+    Figurita *Figuritadepaul=&_figuritas[2];
+    Figurita *Figuritadimaria=&_figuritas[3];
+    Figurita *Figuritadibu=&_figuritas[4];
+    Figurita *Figuritalautaro=&_figuritas[5];
+
+
 
     sf::Clock _reloj1;
     sf::Time _tiempo1;
 
 public:
 
-    ///CONSTRUCTOR-DESTRUCTOR
     Gameplay();
-    virtual ~Gameplay();
-    Protagonista *getpipo(); /// Devuelve direccion de memoria Protagonista
-    Objeto *getpelota();/// Devuelve direccion de memoria Pelota
-    int getcodigobicicletero();
-    int getcodigokiosquera();
-    int getcodigomessi();
-    int getcodigopersonajepelota();
-    void intercambios();
+
+    /// Funciones
+
+    void inicializarobjetos();
     void repartirobjetos();
     void inicializarfiguritas();
-///void inicializarranking(ranking archivoranking);
+    void inicializarpersonajes();
+    ///void inicializarranking(ranking archivoranking);
     void update();
-    sf::FloatRect getBound() const;
-    void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+    /// Jugabilidad
+
+    void Chequearimpresiones();
+    void Objetivos();
+    void intercambios();
     void checkearcolisiones();
     void limitesdelmapa();
+
+    /// Sprites y Draw
+
+    sf::FloatRect getBound() const;
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+    virtual ~Gameplay();
 };
 #endif // GAMEPLAY_H

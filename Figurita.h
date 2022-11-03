@@ -3,28 +3,36 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-class Figurita
+class Figurita : public sf::Drawable
 {
-  private:
 
+    protected:
+    //  Sprites
     sf::Sprite _spritefigurita;
     sf::Texture _texturafigurita;
-    int _codigodefigurita;
-    public:
-    bool pegada=false;
-    void Pegada();
-     Figurita();
-     int getcodigodefigurita();
-        void setcodigodefigurita(int codigo);
-       virtual ~Figurita();
-void setsprite(std::string nombredearchivo);
 
-    /// sprite y textura
-    ///Personajes *_poseedor=nullptr;
-/// getsprite()
-   ////void setposeedor(Personajes &personaje){
-    ///_poseedor=&personaje;
-    ///}
+    //  Propiedades
+    int _codigodefigurita;
+    bool pegada=false;
+
+    public:
+    Figurita();
+    //  Funciones
+    void Pegar();
+    bool getestado();
+
+    void setcodigodefigurita(int codigo);
+    int getcodigodefigurita();
+
+    //  Sprites y draw
+    void setposicionsprite(float x, float y);
+    void setsprite(std::string nombredearchivo);
+    sf::Sprite getSprite();
+    sf::FloatRect getBound() const;
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+    virtual ~Figurita();
+
 };
 
 #endif // FIGURITA_H
