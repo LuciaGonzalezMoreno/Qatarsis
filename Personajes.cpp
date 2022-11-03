@@ -30,6 +30,14 @@ void Personajes::addobjeto(Objeto *objeto){
 }
 
 
+void Personajes::darobjetoapipo(Objeto *objeto, Personajes *personaje){
+
+personaje->addobjeto(objeto);
+objeto->imprimir();
+
+
+}
+
 // Dar
 
 

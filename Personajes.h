@@ -45,6 +45,7 @@ public:
     void darfigurita(Figurita *figurita, Personajes *personaje);
     void darfiguritaapipo(Figurita *figurita, Personajes *personaje);
     void darobjeto(Objeto *objeto, Personajes *personaje);
+    void darobjetoapipo(Objeto *objeto, Personajes *personaje);
 
     void solucionarobjeto(Objeto *objeto);
 

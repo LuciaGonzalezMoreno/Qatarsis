@@ -9,7 +9,6 @@
 #include "Objeto.h"
 #include "Figurita.h"
 #include "Repetida.h"
-#include "Avatar.h"
 #include <SFML/Graphics.hpp>
 #include  <iostream>
 
@@ -28,7 +27,7 @@ private:
     /// Propiedades
 
     Mapa _mapa;
-    Avatar _avatar;
+
     Paneldecontrol _paneldecontrol;
     Personajes _personajes[5];
     Figurita _figuritas[6];
@@ -50,7 +49,7 @@ private:
     Figurita *Figuritadibu=&_figuritas[4];
     Figurita *Figuritalautaro=&_figuritas[5];
 
-    ///
+
 
     sf::Clock _reloj1;
     sf::Time _tiempo1;

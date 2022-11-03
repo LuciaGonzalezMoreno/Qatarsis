@@ -2,7 +2,7 @@
 
 Objeto::Objeto(){}
 
-///	Funciones
+//	Funciones
 
 void Objeto::setcodigoobjeto(int codigo)    {_codigodeobjeto=codigo;}
 
@@ -10,20 +10,47 @@ int Objeto::getcodigoobjeto()   {return _codigodeobjeto;}
 
 void Objeto::solucionado()  {_solucionado=true;}
 
-bool Objeto::activar()  {_activo=true;}
+void Objeto::imprimir()  {_enpantalla=true;}
 
 
 ///	Sprites y draw
 
-sf::FloatRect Objeto::getBound() const  {return _spriteobjeto.getGlobalBounds();}
+sf::FloatRect Objeto::getBound() const  {
 
-void Objeto::draw(sf::RenderTarget& target, sf::RenderStates states) const  {target.draw(_spriteobjeto);}
+if(_solucionado==true){
+    return _spriteobjeto[1].getGlobalBounds();
 
-sf::Sprite Objeto::getSprite() const    {return _spriteobjeto;}
+    }
+    else{
+    return _spriteobjeto[0].getGlobalBounds();
+    }
+}
 
-void Objeto::setsprite(std::string nombredearchivo){
-    _texturaobjeto.loadFromFile(nombredearchivo);
-    _spriteobjeto.setTexture(_texturaobjeto);
+void Objeto::draw(sf::RenderTarget& target, sf::RenderStates states) const  {
+
+if(_solucionado==true){
+target.draw(_spriteobjeto[1]);
+
+    }
+    else{
+target.draw(_spriteobjeto[0]);
+    }
+
+
+}
+
+void Objeto::setposicionsprite(int numerodesprite,float x, float y){
+
+_spriteobjeto[numerodesprite].setPosition(x,y);
+
+
+}
+
+
+void Objeto::setsprite(int numerodesprite, std::string nombredearchivo){
+    _texturaobjeto[numerodesprite].loadFromFile(nombredearchivo);
+    _spriteobjeto[numerodesprite].setTexture(_texturaobjeto[numerodesprite]);
+
 }
 
 Objeto::~Objeto(){}

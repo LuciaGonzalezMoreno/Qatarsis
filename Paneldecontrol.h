@@ -4,6 +4,9 @@
 #include "Figurita.h"
 #include "Repetida.h"
 #include "Objeto.h"
+#include "Avatar.h"
+
+
 
 class Paneldecontrol : public sf::Drawable
 {
@@ -19,15 +22,13 @@ class Paneldecontrol : public sf::Drawable
     Objeto *_objetos[3];
     sf::Sprite _spritepanellateral;
     sf::Texture _texturapanellateral;
-    sf::Sprite _spritesfiguritas[6];
-    sf::Sprite _spritesrepetidas[3];
-    sf::Sprite _spritesobjetos[3];
+    Avatar _avatar;
 
     public:
 
     void cargarobjetos(Figurita *Vectorfiguritas,const int cantidadfigus, Objeto *Vectorobjetos, const int cantidadobjetos, Repetida *vectorrepetidas, const int cantidadrepetidas);
     Paneldecontrol();
-    void controlarfiguritas();
+
        void update();
     sf::FloatRect getBound() const;
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;

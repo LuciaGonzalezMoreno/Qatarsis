@@ -37,23 +37,24 @@ sf::FloatRect  Paneldecontrol::getBound() const
 void Paneldecontrol::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     target.draw(_spritepanellateral, states);
+
    for(int i=0;i<6;i++){
     if(_figuritas[i]->getestado()){
-    Figurita aux0=*_figuritas[i];
-       target.draw(aux0,states);
+        target.draw(*_figuritas[i],states);
     }
+   }
+      for(int i=0;i<3;i++){
+    if(_objetos[i]->getenpantalla()){
+        target.draw(*_objetos[i],states);
+    }
+    target.draw(_avatar, states);
+
    }
 
 
-/*
-
-
-    target.draw(aux1,states);
-
-*/
-
 
 }
+
 
 
 

@@ -12,19 +12,32 @@ Gameplay::Gameplay()
     /// Inicializaciones
     _paneldecontrol.cargarobjetos(_figuritas,6,_objetos,3,_repetidas,3);
     inicializarfiguritas();
-    ///inicializarobjetos();
+    inicializarobjetos();
     repartirobjetos();
 }
 
 void Gameplay::inicializarobjetos(){
 
-    _objetos[0].setcodigoobjeto(0);
-    _objetos[0].setsprite("pelota.png");
-    _objetos[0].getSprite().setPosition(600,400);
+
+       _objetos[0].setcodigoobjeto(0);
+    _objetos[0].setsprite(0,"pelotadesinflada.png");
+    _objetos[0].setposicionsprite(0,600,390);
+    _objetos[0].setsprite(1,"pelotainflada.png");
+    _objetos[0].setposicionsprite(1,600,390);
+
+    _objetos[1].setcodigoobjeto(1);
+    _objetos[1].setsprite(0,"camisetaargentinasucia.png");
+    _objetos[1].setposicionsprite(0,700,390);
+    _objetos[1].setsprite(1,"camisetaargentinalimpia.png");
+    _objetos[1].setposicionsprite(1,700,390);
+
+
+    ///_tiempo1 = _reloj1.restart();
 
 }
 void Gameplay::repartirobjetos()
 {
+
 Kioskera->addobjeto(Pelota);
 Kioskera->addFigurita(Figuritaalvarez);
 
@@ -79,7 +92,7 @@ _personajes[4].setsprite("personaje5.png");
 
 
 void Gameplay::intercambios(){
-
+/*
 Kioskera->darobjeto(Pelota,Pipo);
 Pipo->darobjeto(Pelota,Kioskera);
 Kioskera->solucionarobjeto(Pelota);
@@ -90,17 +103,64 @@ Kioskera->darfiguritaapipo(Figuritadepaul,Pipo);
 Kioskera->darfiguritaapipo(Figuritadimaria,Pipo);
 Kioskera->darfiguritaapipo(Figuritadibu,Pipo);
 Kioskera->darfiguritaapipo(Figuritalautaro,Pipo);
-
+*/
 
 }
 
 void Gameplay::checkearcolisiones(){
     limitesdelmapa();
 
+    if (Pipo->iscolision(*_mapa.getcasa(0))){
 
-      if (Pipo->iscolision(*_mapa.getcasa(0))){
 
-        std::cout<< "Llegaste al hospital";
+        Kioskera->darfiguritaapipo(Figuritaalvarez,Pipo);
+    }
+    if (Pipo->iscolision(*_mapa.getcasa(1))){
+
+
+
+Kioskera->darfiguritaapipo(Figuritamessi,Pipo);
+
+    }
+    if (Pipo->iscolision(*_mapa.getcasa(2))){
+
+
+       Kioskera->darfiguritaapipo(Figuritadepaul,Pipo);
+
+    }
+    if (Pipo->iscolision(*_mapa.getcasa(3))){
+
+
+        Kioskera->darfiguritaapipo(Figuritadimaria,Pipo);
+
+    }
+    if (Pipo->iscolision(*_mapa.getcasa(4))){
+
+
+   Kioskera->darfiguritaapipo(Figuritadibu,Pipo);
+
+    }
+    if (Pipo->iscolision(*_mapa.getcasa(5))){
+
+   Kioskera->darfiguritaapipo(Figuritalautaro,Pipo);
+    }
+    if (Pipo->iscolision(*_mapa.getcasa(6))){
+
+   Kioskera->darobjetoapipo(Pelota,Pipo);
+    }
+
+        if (Pipo->iscolision(*_mapa.getcasa(7))){
+
+   Kioskera->darobjetoapipo(Camiseta,Pipo);
+    }
+if (Pipo->iscolision(*_mapa.getcasa(8))){
+
+   Kioskera->solucionarobjeto(Pelota);
+    }
+
+        if (Pipo->iscolision(*_mapa.getcasa(9))){
+
+   Kioskera->solucionarobjeto(Camiseta);
     }
 
     for(int i=0;i<14;i++){
@@ -161,6 +221,7 @@ void Gameplay::update(){
     checkearcolisiones();
 
 }
+sf::FloatRect  Gameplay::getBound() const   {return _spritefondo.getGlobalBounds();}
 
 void Gameplay::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 
@@ -169,9 +230,9 @@ void Gameplay::draw(sf::RenderTarget& target, sf::RenderStates states) const{
     target.draw(_spriteRio, states);
     target.draw(_paneldecontrol, states);
     target.draw(_pipo,states);
-    target.draw(_avatar, states);
+
     }
 
-sf::FloatRect  Gameplay::getBound() const   {return _spritefondo.getGlobalBounds();}
+
 
 Gameplay::~Gameplay(){}
