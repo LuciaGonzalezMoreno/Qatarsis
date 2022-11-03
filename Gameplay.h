@@ -9,7 +9,11 @@
 #include "Objeto.h"
 #include "Figurita.h"
 #include "Repetida.h"
+<<<<<<< Updated upstream
 #include"Avatar.h"
+=======
+
+>>>>>>> Stashed changes
 #include <SFML/Graphics.hpp>
 #include  <iostream>
 
@@ -25,8 +29,18 @@ private:
     sf::Texture _texturaRio;
 
     Mapa _mapa;
+<<<<<<< Updated upstream
     Protagonista _pipo;
     Personajes _personajessecundarios[7];
+=======
+    Paneldecontrol _paneldecontrol;
+    Personajes _personajes[5];
+    Figurita _figuritas[6];
+    Repetida _repetidas[3];
+    Protagonista _pipo;
+
+    //Ranking
+>>>>>>> Stashed changes
 
     ///    Panedecontrol _paneldecontrol;
     Panellateral _panellateral; /// Panel lateral deberia estar en Ranking _rankingactual;

@@ -19,6 +19,7 @@ private:
 
     sf::Sprite _spritepersonajes;
     sf::Texture _texturapersonajes;
+<<<<<<< Updated upstream
     Objeto *_pelota;
     Objeto *_camiseta;
     Objeto *_autografo;
@@ -28,10 +29,33 @@ private:
 public:
 
 
-    void inicializarpunteros();
+=======
+    bool _objetos[3];
+    bool _figuritas[6];
+    bool _repetidas[3];
+
+public:
 
     Personajes();
+
+    //	Funciones
+    void setcodigodepersonaje(int codigo);
+>>>>>>> Stashed changes
+    void inicializarpunteros();
+
+<<<<<<< Updated upstream
+    Personajes();
     void update();
+=======
+    void darfigurita(Figurita *figurita, Personajes *personaje);
+    void darfiguritaapipo(Figurita *figurita, Personajes *personaje);
+    void darobjeto(Objeto *objeto, Personajes *personaje);
+    void darobjetoapipo(Objeto *objeto, Personajes *personaje);
+    void solucionarobjeto(Objeto *objeto);
+
+    //	Sprites y draw
+    void setsprite(std::string nombredearchivo);
+>>>>>>> Stashed changes
     sf::FloatRect getBound() const;
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     virtual ~Personajes();

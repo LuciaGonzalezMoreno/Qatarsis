@@ -26,6 +26,7 @@ void Personajes::update()
 
 }
 
+<<<<<<< Updated upstream
 sf::FloatRect Personajes::getBound() const {}
 void Personajes::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
@@ -41,6 +42,33 @@ void Personajes::addcamiseta(Objeto *camiseta)
 {
     _camiseta=camiseta;
 }
+=======
+
+void Personajes::darfigurita(Figurita *figurita, Personajes *personaje){
+
+ personaje->addFigurita(figurita);
+_figuritas[figurita->getcodigodefigurita()]=true;
+
+}
+
+void Personajes::darobjeto(Objeto *objeto, Personajes *personaje){
+
+
+personaje->addobjeto(objeto);
+_objetos[objeto->getcodigoobjeto()]=false;
+
+}
+
+void Personajes::darobjetoapipo(Objeto *objeto, Personajes *personaje){
+
+personaje->addobjeto(objeto);
+objeto->imprimir();
+
+
+}
+
+// Solucionar
+>>>>>>> Stashed changes
 
 void Personajes::addautografo(Objeto *autografo)
 {
