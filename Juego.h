@@ -1,39 +1,42 @@
 #ifndef JUEGO_H
 #define JUEGO_H
-/// includeranking
-#include "Gameplay.h"
 #include "Menu.h"
+#include "Ranking.h"
+#include "Gameplay.h"
+#include "Archivo.h"
+#include<iostream>
 
 class Juego
 {
-
 private:
-    sf::RenderWindow *_window;
     sf::Event _event;
+    sf::RenderWindow _window;
 
-    ///FUNCIONES PRIVADAS
     Gameplay _gameplay;
     Menu _menu;
+    Ranking _ranking;
+    Archivo _archivoRanking;
+    sf::Vector2i posicion_mouse;
 
-    ///Ranking
-    ///ArchivoRanking _archivoranking;
     void inicializavariables();
     void inicializarventana();
+    void inicializarArchivo();
+
+    sf::Clock _reloj;
+    sf::Time _tiempo;
 
 public:
-/// CONSTRUCTODESTRUCTOR
+
     Juego();
   ~Juego();
-///ACCESORES
+
     const bool ventanaabierta() const;
-    ///FUNCIONES
+
     /// Ranking getrankingarchivo());
     void Gameloop();
     void update ();
     void draw ();
     void pollevents();
-
-
 };
 
 #endif // JUEGO_H

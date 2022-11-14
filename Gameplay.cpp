@@ -4,6 +4,13 @@ using namespace sf;
 
 Gameplay::Gameplay()
 {
+<<<<<<< Updated upstream
+=======
+    _estaActivo = false;
+    _comienzaJuego = true;
+
+    //Cargando sprites
+>>>>>>> Stashed changes
     _texturafondo.loadFromFile("Pasto.png");
     _spritefondo.setTexture(_texturafondo);
 
@@ -132,8 +139,15 @@ void Gameplay::limitesdelmapa()
     }
 }
 
+<<<<<<< Updated upstream
 void Gameplay::update()
 {
+=======
+    if(_comienzaJuego)
+    {
+
+    }
+>>>>>>> Stashed changes
     _pipo.update();
     checkearcolisiones();
 }

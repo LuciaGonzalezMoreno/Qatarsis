@@ -10,7 +10,6 @@
 class Personajes : public Objeto, public sf::Drawable, public Colisionable
 {
 
-
 /// Funciones que personaje principal no deberia heredar
 ///void setParlamentos ();
 ///void Hablar(int codigodeparlamento);
@@ -19,6 +18,7 @@ private:
 
     sf::Sprite _spritepersonajes;
     sf::Texture _texturapersonajes;
+<<<<<<< Updated upstream
     Objeto *_pelota;
     Objeto *_camiseta;
     Objeto *_autografo;
@@ -28,6 +28,19 @@ private:
 public:
 
 
+=======
+
+    bool _objetos[3];
+    bool _figuritas[6];
+    bool _repetidas[3];
+
+public:
+
+    Personajes();
+
+    //	Funciones
+    void setcodigodepersonaje(int codigo);
+>>>>>>> Stashed changes
     void inicializarpunteros();
 
     Personajes();

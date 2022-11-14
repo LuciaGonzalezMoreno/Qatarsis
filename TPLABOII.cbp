@@ -53,6 +53,8 @@
 			<Add library="SFML-2.5.1/lib/libsfml-graphics-d.a" />
 			<Add directory="SFML-2.5.1/lib" />
 		</Linker>
+		<Unit filename="Archivo.cpp" />
+		<Unit filename="Archivo.h" />
 		<Unit filename="Avatar.cpp" />
 		<Unit filename="Avatar.h" />
 		<Unit filename="Casas.cpp" />
@@ -63,8 +65,6 @@
 		<Unit filename="Cuadras.h" />
 		<Unit filename="Figurita.cpp" />
 		<Unit filename="Figurita.h" />
-		<Unit filename="Figuritas.cpp" />
-		<Unit filename="Figuritas.h" />
 		<Unit filename="Gameplay.cpp" />
 		<Unit filename="Gameplay.h" />
 		<Unit filename="Juego.cpp" />
@@ -75,12 +75,19 @@
 		<Unit filename="Menu.h" />
 		<Unit filename="Objeto.cpp" />
 		<Unit filename="Objeto.h" />
+<<<<<<< Updated upstream
 		<Unit filename="Panellateral.cpp" />
+=======
+		<Unit filename="Paneldecontrol.cpp" />
+		<Unit filename="Paneldecontrol.h" />
+>>>>>>> Stashed changes
 		<Unit filename="Panellateral.h" />
 		<Unit filename="Personajes.cpp" />
 		<Unit filename="Personajes.h" />
 		<Unit filename="Protagonista.cpp" />
 		<Unit filename="Protagonista.h" />
+		<Unit filename="Ranking.cpp" />
+		<Unit filename="Ranking.h" />
 		<Unit filename="Repetida.cpp" />
 		<Unit filename="Repetida.h" />
 		<Unit filename="main.cpp" />

@@ -42,6 +42,9 @@ private:
     sf::Clock _reloj1;
     sf::Time _tiempo1;
 
+    bool _estaActivo;
+    bool _comienzaJuego;
+
 public:
 
     ///CONSTRUCTOR-DESTRUCTOR
@@ -60,7 +63,15 @@ public:
     void update();
     sf::FloatRect getBound() const;
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+<<<<<<< Updated upstream
     void checkearcolisiones();
     void limitesdelmapa();
+=======
+
+    void set_estaActivo(bool op){_estaActivo = op;}
+    bool get_estaActivo(){return _estaActivo;}
+
+    virtual ~Gameplay();
+>>>>>>> Stashed changes
 };
 #endif // GAMEPLAY_H
